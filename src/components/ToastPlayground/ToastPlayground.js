@@ -8,7 +8,7 @@ const VARIANT_OPTIONS = ["notice", "warning", "success", "error"];
 
 function ToastPlayground() {
   const [messageText, setMessageText] = React.useState("");
-  const [toastVariant, setToastVariant] = React.useState("notice");
+  const [toastVariant, setToastVariant] = React.useState(VARIANT_OPTIONS[0]);
   function handleMessageEvent(event) {
     setMessageText(event.target.value);
   }
@@ -65,7 +65,11 @@ function ToastPlayground() {
         <div className={styles.row}>
           <div className={styles.label} />
           <div className={`${styles.inputWrapper} ${styles.radioWrapper}`}>
-            <Button>Pop Toast!</Button>
+            <Button
+              onClick={() => window.alert(`${toastVariant} - ${messageText}`)}
+            >
+              Pop Toast!
+            </Button>
           </div>
         </div>
       </div>
