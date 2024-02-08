@@ -14,14 +14,12 @@ function ToastPlayground() {
     setMessageText(event.target.value);
   }
   function addToastToList() {
-    const newMessage = messageText;
-    console.log(newMessage);
     const newToast = {
       id: crypto.randomUUID(),
-      message: newMessage,
-      variant: toastVariant
+      messageText,
+      toastVariant
     }
-    
+    console.log(messageText);
     const newToastList = [...toastList, newToast];
     setToastList(newToastList);
     setMessageText('');

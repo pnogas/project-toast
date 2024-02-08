@@ -13,7 +13,7 @@ function ToastShelf({toastList, setToastList}) {
       { toastList.map(item => {
         return (
           <li key={item.id} className={styles.toastWrapper}>
-          <Toast variant={item.variant} dismissToast={() => removeToast(item.id)}>{item.message}</Toast>
+          <Toast id={item.id} variant={item.toastVariant} dismissToast={removeToast}>{item.messageText}</Toast>
         </li>
         )
       } )}
